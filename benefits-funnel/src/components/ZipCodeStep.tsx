@@ -10,22 +10,27 @@ const ZipCodeStep: React.FC<ZipCodeStepProps> = ({ zipCode, setZipCode, onNext }
   const isValidZipCode = /^\d{5}$/.test(zipCode);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold mb-4 text-[#2d5ff1]">Let's start with the hardest question</h1>
-      <img src="./public/img2.png" alt="Zip Code Visual" className="mb-4 w-64 h-64 object-cover" />
-      <h2 className="text-xl mb-4">What's your zip code?</h2>
-      <input
-        type="text"
-        value={zipCode}
-        onChange={(e) => setZipCode(e.target.value)}
-        className="border-2 border-[#2d5ff1] rounded px-4 py-2 mb-4 w-64 text-center"
-        placeholder="Enter zip code"
-        maxLength={5}
-      />
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 text-primary text-center">Let's start with the hardest question</h1>
+      <img src="/step1.png" alt="Zip Code Visual" className="mb-4 w-32 h-32 md:w-48 md:h-48 object-cover" />
+      <h2 className="text-lg md:text-xl mb-4 text-center">What's your zip code?</h2>
+      <div className="group mb-4 w-full max-w-xs">
+        <input
+          required
+          type="text"
+          value={zipCode}
+          onChange={(e) => setZipCode(e.target.value)}
+          className="input w-full"
+          maxLength={5}
+        />
+        <span className="highlight"></span>
+        <span className="bar"></span>
+        <label>Zip Code</label>
+      </div>
       <button
         onClick={onNext}
         disabled={!isValidZipCode}
-        className={`bg-[#2d5ff1] text-white px-6 py-2 rounded transition-colors ${
+        className={`bg-primary text-white px-6 py-2 rounded transition-colors ${
           isValidZipCode ? 'hover:bg-blue-600' : 'opacity-50 cursor-not-allowed'
         }`}
       >
