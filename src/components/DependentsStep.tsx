@@ -25,7 +25,7 @@ const DependentsStep: React.FC<DependentsStepProps> = ({ dependents, setDependen
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-2xl md:text-3xl font-bold mb-4 text-primary text-center">One last question before we can generate a personalized offer</h1>
-      <img src="/img4.png" alt="Dependents Visual" className="mb-4 w-32 h-32 md:w-48 md:h-48 object-cover" />
+      <img src="/step2.png" alt="Dependents Visual" className="mb-4 w-32 h-32 md:w-48 md:h-48 object-cover" />
       <h2 className="text-lg md:text-xl mb-4 text-center">Who would you like to cover?</h2>
       <div className="flex flex-wrap justify-center gap-2 mb-4">
         {options.map((option) => (
